@@ -30,8 +30,11 @@ def nota_BTG(file):
     for dado in valor:
         print(dado)
     
-    #ordens = tables[2]
+    ordens = tables[2]
+    #print(ordens)
+
     #save_and_open_file(ordens)
+    return ordens
 
 def save_and_open_file(ordens):
     with open('table.html', 'w') as fd:
