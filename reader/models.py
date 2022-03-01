@@ -2,6 +2,6 @@ from pyexpat import model
 from django.db import models
 
 class Document(models.Model):
-    filename = models.CharField()
+    filename = models.CharField(max_length=300)
     document = models.FileField()
     uploaded_at = models.DateTimeField(auto_now_add=True)
