@@ -21,7 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-02k!bb!v435!bsucrsbu0@0(x1vl#9h^4znm^-iebbvf6rwjdd'
+from dotenv import load_dotenv
+load_dotenv()
+
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,3 +133,5 @@ MEDIA_URL = '/media/'
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+
